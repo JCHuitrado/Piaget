@@ -1,0 +1,661 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>UANL — Psicología del niño | Lecturas (Piaget)</title>
+  <meta name="description" content="Galería institucional de lecturas sobre Piaget para el curso Psicología del niño (UANL)." />
+
+  <style>
+    :root{
+      /* Minimalista e institucional */
+      --bg: #f6f7f9;
+      --surface: #ffffff;
+      --surface2: #fbfbfc;
+      --text: #111827;
+      --muted: #4b5563;
+      --border: #e5e7eb;
+      --shadow: 0 10px 22px rgba(17, 24, 39, .08);
+      --radius: 14px;
+      --radius2: 18px;
+      --focus: 0 0 0 4px rgba(17, 24, 39, .10);
+      --brand: #1f2937;
+    }
+
+    *{ box-sizing:border-box; }
+    html,body{ height:100%; }
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.45;
+    }
+
+    .container{
+      width: min(1120px, 92vw);
+      margin: 0 auto;
+      padding: 28px 0 56px;
+    }
+
+    header{
+      display:flex;
+      gap: 16px;
+      align-items:flex-start;
+      justify-content:space-between;
+      padding-bottom: 18px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .brand{
+      display:flex;
+      gap: 14px;
+      align-items:flex-start;
+      max-width: 78ch;
+    }
+
+    .mark{
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: linear-gradient(180deg, #ffffff, #f3f4f6);
+      box-shadow: 0 6px 14px rgba(17, 24, 39, .06);
+      display:grid;
+      place-items:center;
+      flex: 0 0 auto;
+      font-weight: 800;
+      color: var(--brand);
+      letter-spacing: .4px;
+      user-select:none;
+    }
+
+    h1{
+      margin:0;
+      font-size: clamp(1.15rem, 1.2vw + 1rem, 1.6rem);
+      letter-spacing: .2px;
+    }
+
+    .subtitle{
+      margin: 6px 0 0;
+      color: var(--muted);
+      font-size: .98rem;
+    }
+
+    .top-actions{
+      display:flex;
+      gap: 10px;
+      align-items:center;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+
+    .chip{
+      font-size: .86rem;
+      color: var(--muted);
+      border: 1px solid var(--border);
+      background: var(--surface2);
+      border-radius: 999px;
+      padding: 6px 10px;
+      white-space: nowrap;
+    }
+
+    .toolbar{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 12px;
+      padding: 16px 0 8px;
+    }
+
+    .search{
+      width: min(520px, 100%);
+      display:flex;
+      align-items:center;
+      gap: 10px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 10px 12px;
+      box-shadow: 0 4px 12px rgba(17, 24, 39, .04);
+    }
+
+    .search input{
+      border:none;
+      outline:none;
+      width:100%;
+      font-size: .95rem;
+      background: transparent;
+      color: var(--text);
+    }
+
+    .btn{
+      appearance:none;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text);
+      padding: 10px 12px;
+      border-radius: 12px;
+      font-weight: 650;
+      font-size: .92rem;
+      cursor:pointer;
+      transition: background .15s ease, transform .08s ease, border-color .15s ease;
+      display:inline-flex;
+      align-items:center;
+      gap: 10px;
+      user-select:none;
+    }
+
+    .btn:hover{ background: #f9fafb; border-color: #d1d5db; }
+    .btn:active{ transform: translateY(1px); }
+    .btn:focus{ outline:none; box-shadow: var(--focus); }
+
+    .btn.ghost{ background: transparent; }
+
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 10px;
+    }
+
+    @media (max-width: 980px){
+      .grid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+
+    @media (max-width: 620px){
+      header{ flex-direction:column; }
+      .top-actions{ justify-content:flex-start; }
+      .toolbar{ flex-direction:column; align-items:stretch; }
+      .grid{ grid-template-columns: 1fr; }
+    }
+
+    .tile{
+      border: 1px solid var(--border);
+      background: var(--surface);
+      border-radius: var(--radius2);
+      padding: 14px;
+      box-shadow: 0 6px 16px rgba(17, 24, 39, .05);
+      display:flex;
+      flex-direction:column;
+      gap: 10px;
+      min-height: 160px;
+      cursor:pointer;
+      transition: transform .10s ease, box-shadow .15s ease, border-color .15s ease;
+      text-align:left;
+    }
+
+    .tile:hover{
+      transform: translateY(-1px);
+      box-shadow: 0 10px 22px rgba(17, 24, 39, .08);
+      border-color: #d1d5db;
+    }
+
+    .tile:focus{ outline:none; box-shadow: var(--focus); border-color:#cbd5e1; }
+
+    .tile-top{
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap: 12px;
+    }
+
+    .kicker{
+      font-size: .78rem;
+      color: var(--muted);
+      letter-spacing: .35px;
+      text-transform: uppercase;
+    }
+
+    .title{
+      margin: 2px 0 0;
+      font-size: 1rem;
+      letter-spacing: .15px;
+    }
+
+    .meta{
+      display:flex;
+      gap: 8px;
+      flex-wrap:wrap;
+      margin-top: 6px;
+    }
+
+    .tag{
+      font-size: .84rem;
+      color: var(--muted);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 6px 10px;
+      background: var(--surface2);
+      white-space:nowrap;
+    }
+
+    .hint{
+      margin-top:auto;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 10px;
+      color: var(--muted);
+      font-size: .9rem;
+      padding-top: 4px;
+    }
+
+    .modal-backdrop{
+      position: fixed;
+      inset: 0;
+      background: rgba(17, 24, 39, .55);
+      display:none;
+      align-items:center;
+      justify-content:center;
+      padding: 18px;
+      z-index: 50;
+    }
+    .modal-backdrop[aria-hidden="false"]{ display:flex; }
+
+    .modal{
+      width: min(900px, 96vw);
+      max-height: min(86vh, 900px);
+      overflow: auto;
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,.25);
+      background: var(--surface);
+      box-shadow: 0 22px 60px rgba(17, 24, 39, .25);
+    }
+
+    .modal-header{
+      position: sticky;
+      top:0;
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 14px 16px;
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap: 12px;
+    }
+
+    .modal-title{ display:flex; flex-direction:column; gap: 6px; min-width: 0; }
+
+    .modal-title h2{ margin:0; font-size: 1.05rem; letter-spacing: .15px; }
+
+    .modal-title .sub{
+      margin:0;
+      color: var(--muted);
+      font-size: .94rem;
+      display:flex;
+      flex-wrap:wrap;
+      gap: 8px;
+      align-items:center;
+    }
+
+    .close-x{
+      border: 1px solid var(--border);
+      background: var(--surface2);
+      border-radius: 12px;
+      width: 40px;
+      height: 40px;
+      cursor:pointer;
+      display:grid;
+      place-items:center;
+      transition: background .15s ease, border-color .15s ease;
+      flex: 0 0 auto;
+    }
+    .close-x:hover{ background: #f3f4f6; border-color:#d1d5db; }
+    .close-x:focus{ outline:none; box-shadow: var(--focus); }
+
+    .modal-body{ padding: 16px; }
+
+    .reading{
+      border: 1px solid var(--border);
+      background: var(--surface2);
+      border-radius: 14px;
+      padding: 14px;
+    }
+
+    .reading blockquote{
+      margin:0;
+      padding: 12px 12px 12px 14px;
+      border-left: 4px solid var(--brand);
+      background: #ffffff;
+      border-radius: 12px;
+      white-space: pre-wrap;
+      color: var(--text);
+    }
+
+    .modal-actions{
+      display:flex;
+      gap: 10px;
+      align-items:center;
+      justify-content:flex-end;
+      padding: 14px 16px 16px;
+      border-top: 1px solid var(--border);
+      background: var(--surface);
+    }
+
+    footer{
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: .88rem;
+      border-top: 1px solid var(--border);
+      padding-top: 14px;
+    }
+
+    @media print{
+      body{ background:#fff !important; }
+      header, .toolbar, .grid, footer, .modal-actions, .close-x{ display:none !important; }
+      .modal{ box-shadow:none !important; border:none !important; width:auto !important; max-height:none !important; }
+      .modal-header{ position: static; }
+      .reading{ border: 1px solid #ccc !important; background:#fff !important; }
+      .reading blockquote{ border-left: 4px solid #111827 !important; }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="container">
+    <header aria-label="Encabezado del sitio">
+      <div class="brand">
+        <div class="mark" aria-hidden="true">UANL</div>
+        <div>
+          <h1>Psicología del niño — Lecturas (Piaget)</h1>
+          <p class="subtitle">
+            Este espacio reúne lecturas clave para analizar el desarrollo cognitivo infantil desde el enfoque de Jean Piaget.
+            Selecciona una lectura para abrirla en una ventana emergente y, si lo requieres, imprimir el recurso.
+          </p>
+        </div>
+      </div>
+      <div class="top-actions" aria-label="Metadatos del curso">
+        <span class="chip">Universidad Autónoma de Nuevo León</span>
+        <span class="chip">Nivel: Licenciatura</span>
+        <span class="chip">Duración: 6 horas</span>
+      </div>
+    </header>
+
+    <section class="toolbar" aria-label="Herramientas de navegación">
+      <div class="search" role="search" aria-label="Buscar lecturas">
+        <span aria-hidden="true">🔎</span>
+        <input id="q" type="search" placeholder="Buscar por subtema o páginas (ej. ‘conflicto’, ‘239’)" autocomplete="off" />
+      </div>
+      <div style="display:flex; gap:10px; align-items:center; justify-content:flex-end;">
+        <span class="chip" id="countChip">0 lecturas</span>
+        <button class="btn ghost" id="clearBtn" type="button" aria-label="Limpiar búsqueda">Limpiar</button>
+      </div>
+    </section>
+
+    <section aria-label="Galería de lecturas">
+      <div class="grid" id="grid"></div>
+    </section>
+
+    <footer>
+      <div><strong>Bibliografía base:</strong> Schunk, D. H. (2012). <em>Teorías del aprendizaje. Una perspectiva educativa</em> (6ª ed.). Fragmentos curados por subtema y páginas.</div>
+      <div style="margin-top:6px;">Accesibilidad: navegación por teclado (Tab, Enter, Escape). En el modal: flechas izquierda/derecha para cambiar de lectura.</div>
+    </footer>
+  </main>
+
+  <div class="modal-backdrop" id="backdrop" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Lectura">
+    <div class="modal" id="modal">
+      <div class="modal-header">
+        <div class="modal-title">
+          <h2 id="modalHeading">Lectura</h2>
+          <p class="sub" id="modalMeta"></p>
+        </div>
+        <button class="close-x" id="closeModal" type="button" aria-label="Cerrar">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="reading" id="printArea">
+          <blockquote id="modalText"></blockquote>
+        </div>
+      </div>
+      <div class="modal-actions">
+        <button class="btn" id="copyBtn" type="button">Copiar</button>
+        <button class="btn" id="printBtn" type="button">Imprimir recurso</button>
+        <button class="btn" id="closeModal2" type="button">Cerrar</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const readings = [
+      {
+        theme: "Jean Piaget",
+        subtopic: "Naturaleza constructivista del desarrollo cognitivo",
+        pages: "236–237",
+        excerpt: "La teoría de Piaget es constructivista porque supone que los niños establecen sus propios conceptos sobre el mundo para darle sentido (Byrnes, 1996). Estos conceptos no son innatos, sino que los niños los adquieren a través de sus experiencias normales. El niño no recibe La información del entorno (incluyendo las personas) de manera automática, sino que la procesa de acuerdo con las estructuras mentales que ya posee. Los niños le dan un sentido a su ambiente y construyen la realidad con base en sus capacidades actuales. A su vez, esos conceptos básicos se convierten en perspectivas más sofisticadas a través de la experiencia."
+      },
+      {
+        theme: "Jean Piaget",
+        subtopic: "Procesos del desarrollo cognitivo (perspectiva constructivista)",
+        pages: "236",
+        excerpt: "Las teorías del desarrollo de Piaget, Vygotsky y muchas otras reflejan una perspectiva constructivista porque proponen que el conocimiento no se adquiere de manera automática, sino que los aprendices construyen su propio aprendizaje."
+      },
+      {
+        theme: "Jean Piaget",
+        subtopic: "Estructuras cognitivas y aprendizaje",
+        pages: "236",
+        excerpt: "Estas teorías plantean que el desarrollo implica cambios en las estructuras cognoscitivas, las cuales pueden ser modificadas por la información aprendida."
+      },
+      {
+        theme: "Jean Piaget",
+        subtopic: "Desarrollo y desempeño cognitivo",
+        pages: "238",
+        excerpt: "Es probable que los niños no demuestren los niveles de comprensión de una etapa piagetiana por varias razones, como la falta de atención hacia los estímulos relevantes, la codificación inadecuada de la información, la incapacidad para relacionar información con los conocimientos previos o el uso de medios ineficaces para recuperar la información (Siegler, 1991)."
+      },
+      {
+        theme: "Jean Piaget",
+        subtopic: "Implicaciones educativas del desarrollo cognitivo",
+        pages: "239",
+        excerpt: "Piaget consideraba que el desarrollo cognoscitivo no se puede enseñar, aunque algunas investigaciones demuestran que es posible acelerarlo (Zimmerman y Whitehurst, 1979)."
+      },
+      {
+        theme: "Jean Piaget",
+        subtopic: "Rol activo del estudiante",
+        pages: "239",
+        excerpt: "Piaget criticó el aprendizaje pasivo. Los niños necesitan ambientes estimulantes que les permitan explorar de forma activa y que incluyan actividades prácticas. Este tipo de enseñanza facilita la construcción activa del conocimiento."
+      },
+      {
+        theme: "Jean Piaget",
+        subtopic: "Conflicto cognitivo e incongruencia",
+        pages: "240",
+        excerpt: "El desarrollo ocurre solamente cuando los estímulos ambientales no se ajustan a las estructuras cognoscitivas de los estudiantes. El material no debe ser demasiado fácil de asimilar, pero tampoco tan difícil como para impedir la acomodación."
+      }
+    ];
+
+    const grid = document.getElementById('grid');
+    const q = document.getElementById('q');
+    const clearBtn = document.getElementById('clearBtn');
+    const countChip = document.getElementById('countChip');
+
+    const backdrop = document.getElementById('backdrop');
+    const modalHeading = document.getElementById('modalHeading');
+    const modalMeta = document.getElementById('modalMeta');
+    const modalText = document.getElementById('modalText');
+
+    const closeModalBtn = document.getElementById('closeModal');
+    const closeModalBtn2 = document.getElementById('closeModal2');
+    const printBtn = document.getElementById('printBtn');
+    const copyBtn = document.getElementById('copyBtn');
+
+    let lastFocusedEl = null;
+    let activeIndex = 0;
+
+    function setCount(n){ countChip.textContent = `${n} lecturas`; }
+
+    function render(items){
+      grid.innerHTML = '';
+      setCount(items.length);
+
+      if(items.length === 0){
+        const empty = document.createElement('div');
+        empty.style.gridColumn = '1 / -1';
+        empty.style.border = '1px dashed #d1d5db';
+        empty.style.background = '#fff';
+        empty.style.borderRadius = '14px';
+        empty.style.padding = '14px';
+        empty.style.color = '#4b5563';
+        empty.textContent = 'No se encontraron lecturas con ese criterio.';
+        grid.appendChild(empty);
+        return;
+      }
+
+      items.forEach((r) => {
+        const idx = r.__idx;
+
+        const tile = document.createElement('button');
+        tile.type = 'button';
+        tile.className = 'tile';
+        tile.setAttribute('aria-label', `Abrir lectura: ${r.subtopic}`);
+        tile.dataset.idx = String(idx);
+
+        const top = document.createElement('div');
+        top.className = 'tile-top';
+
+        const left = document.createElement('div');
+        const kicker = document.createElement('div');
+        kicker.className = 'kicker';
+        kicker.textContent = 'Lectura — Piaget';
+
+        const title = document.createElement('div');
+        title.className = 'title';
+        title.textContent = r.subtopic;
+
+        const meta = document.createElement('div');
+        meta.className = 'meta';
+
+        const tag1 = document.createElement('span');
+        tag1.className = 'tag';
+        tag1.textContent = `Págs. ${r.pages}`;
+
+        const tag2 = document.createElement('span');
+        tag2.className = 'tag';
+        tag2.textContent = 'Abrir lectura';
+
+        meta.appendChild(tag1);
+        meta.appendChild(tag2);
+
+        left.appendChild(kicker);
+        left.appendChild(title);
+        left.appendChild(meta);
+
+        const right = document.createElement('span');
+        right.className = 'tag';
+        right.textContent = `#${idx + 1}`;
+
+        top.appendChild(left);
+        top.appendChild(right);
+
+        const hint = document.createElement('div');
+        hint.className = 'hint';
+        hint.innerHTML = '<span><span aria-hidden="true">↵</span> Enter</span><span><span aria-hidden="true">⎋</span> Escape</span>';
+
+        tile.appendChild(top);
+        tile.appendChild(hint);
+
+        tile.addEventListener('click', () => openModal(idx));
+        tile.addEventListener('keydown', (e) => {
+          if(e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            openModal(idx);
+          }
+        });
+
+        grid.appendChild(tile);
+      });
+    }
+
+    function openModal(idx){
+      const r = readings[idx];
+      activeIndex = idx;
+      lastFocusedEl = document.activeElement;
+
+      modalHeading.textContent = r.subtopic;
+      modalMeta.textContent = `Tema: ${r.theme} · Páginas: ${r.pages} · Fuente: Schunk (6ª ed.)`;
+      modalText.textContent = r.excerpt;
+
+      backdrop.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+      closeModalBtn.focus();
+    }
+
+    function closeModal(){
+      backdrop.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+      if(lastFocusedEl && typeof lastFocusedEl.focus === 'function') lastFocusedEl.focus();
+    }
+
+    function printResource(){ window.print(); }
+
+    async function copyResource(){
+      const r = readings[activeIndex];
+      const payload = `${r.subtopic}
+Tema: ${r.theme}
+Páginas: ${r.pages}
+Fuente: Schunk (6ª ed.)
+
+${r.excerpt}`;
+      try{
+        await navigator.clipboard.writeText(payload);
+        copyBtn.textContent = 'Copiado';
+        setTimeout(() => copyBtn.textContent = 'Copiar', 1200);
+      } catch(e){
+        const ta = document.createElement('textarea');
+        ta.value = payload;
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand('copy');
+        ta.remove();
+        copyBtn.textContent = 'Copiado';
+        setTimeout(() => copyBtn.textContent = 'Copiar', 1200);
+      }
+    }
+
+    function normalize(s){
+      // Remove acentos sin depender de clases unicode avanzadas
+      const n = (s || '').toLowerCase().normalize('NFD');
+      return n.replace(/[̀-ͯ]/g, '');
+    }
+
+    function applyFilter(){
+      const term = normalize(q.value.trim());
+      const withIdx = readings.map((r, i) => ({...r, __idx: i}));
+      if(!term){ render(withIdx); return; }
+      const filtered = withIdx.filter(r => normalize(`${r.subtopic} ${r.pages} ${r.theme}`).includes(term));
+      render(filtered);
+    }
+
+    q.addEventListener('input', applyFilter);
+    clearBtn.addEventListener('click', () => { q.value = ''; applyFilter(); q.focus(); });
+
+    closeModalBtn.addEventListener('click', closeModal);
+    closeModalBtn2.addEventListener('click', closeModal);
+    backdrop.addEventListener('click', (e) => { if(e.target === backdrop) closeModal(); });
+    printBtn.addEventListener('click', printResource);
+    copyBtn.addEventListener('click', copyResource);
+
+    document.addEventListener('keydown', (e) => {
+      const isOpen = backdrop.getAttribute('aria-hidden') === 'false';
+      if(isOpen && e.key === 'Escape') closeModal();
+
+      // Navegación rápida dentro del modal
+      if(isOpen && (e.key === 'ArrowRight' || e.key === 'ArrowLeft')){
+        const dir = e.key === 'ArrowRight' ? 1 : -1;
+        const next = Math.min(Math.max(activeIndex + dir, 0), readings.length - 1);
+        if(next !== activeIndex) openModal(next);
+      }
+
+      // Trap de foco simple
+      if(isOpen && e.key === 'Tab'){
+        const focusables = backdrop.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
+        const list = [...focusables].filter(el => !el.disabled && el.offsetParent !== null);
+        if(list.length === 0) return;
+        const first = list[0];
+        const last = list[list.length - 1];
+        if(e.shiftKey && document.activeElement === first){ e.preventDefault(); last.focus(); }
+        else if(!e.shiftKey && document.activeElement === last){ e.preventDefault(); first.focus(); }
+      }
+    });
+
+    applyFilter();
+  </script>
+</body>
+</html>
